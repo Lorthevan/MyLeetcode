@@ -1,2 +1,2 @@
 # MyLeetcode
-null
+This is my practice.
