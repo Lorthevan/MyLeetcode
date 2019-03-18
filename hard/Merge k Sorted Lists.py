@@ -24,17 +24,21 @@
 #         self.val = x
 #         self.next = None
 
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         if len(lists) == 1:
-            print(lists[0])
             return lists[0]
         if len(lists) == 0:
             return lists
-        
-        nodes = self.mergeTwoLists(lists.pop(), lists.pop())
+        nodes = self.mergeTwoLists(lists.pop(0), lists.pop(0))
         lists.append(nodes)
-        self.mergeKLists(lists)
+        return self.mergeKLists(lists)
     
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         l = l_head = ListNode(None)
